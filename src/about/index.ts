@@ -1,79 +1,83 @@
-const logo: HTMLObjectElement = document.getElementById("logo") as HTMLObjectElement;
-const catchcopy: HTMLElement = document.getElementById("catchcopy");
-const dummy = document.createElement('div');
-logo.parentNode.insertBefore(dummy, logo.nextSibling);
+window.addEventListener('DOMContentLoaded', () => {
 
-const locateLogo = () => {
-    let isAnimating = true;
-    let logoClientRect = logo.contentDocument.getElementById("svg-main").getClientRects()[0];
-    let initHeight = logoClientRect.height;
-    let initWidth = logoClientRect.width;
+    let logo: HTMLObjectElement = document.getElementById("logo") as HTMLObjectElement;
+    let catchcopy: HTMLElement = document.getElementById("catchcopy");
+    let dummy = document.createElement('div');
+    logo.parentNode.insertBefore(dummy, logo.nextSibling);
 
-    logo.style.height = `${initHeight}px`;
+    let requestID;
 
-    let initX = logo.offsetLeft;
-    let initY = logo.offsetTop;
+    const locateLogo = () => {
 
-    logo.style.position = 'fixed';
-    dummy.style.height = `${initHeight}px`;
-    dummy.style.width = `${initWidth}px`;
+        let logoClientRect = logo.contentDocument.getElementById("svg-main").getClientRects()[0];
+        let initHeight = logoClientRect.height;
+        let initWidth = logoClientRect.width;
 
-    catchcopy.style.visibility = logo.style.visibility = 'visible';
+        logo.style.height = `${initHeight}px`;
 
-    let dHeight = (initHeight - 25) / initY;
-    let dX = (initX + 25) / initY;
+        let initX = logo.offsetLeft;
+        let initY = logo.offsetTop;
 
-    let timer = 0;
+        logo.style.position = 'fixed';
+        dummy.style.height = `${initHeight}px`;
+        dummy.style.width = `${initWidth}px`;
 
-    window.addEventListener('resize', () => {
-        if (timer > 0) {
-            clearTimeout(timer);
-        }
+        catchcopy.style.visibility = logo.style.visibility = 'visible';
 
-        timer = window.setTimeout(() => {
-            console.log("chagned!");
-            isAnimating = false;
+        let dHeight = (initHeight - 25) / initY;
+        let dX = (initX + 25) / initY;
 
-            dummy.remove();
-            logo.removeAttribute('style');
+        let timer = 0;
+        window.addEventListener('resize', () => {
+            if (timer > 0) {
+                clearTimeout(timer);
+            }
 
-            logoClientRect = logo.contentDocument.getElementById("svg-main").getClientRects()[0];
-            initHeight = logoClientRect.height;
-            initWidth = logoClientRect.width;
+            timer = window.setTimeout(() => {
+                logo = document.getElementById("logo") as HTMLObjectElement;
+                window.cancelAnimationFrame(requestID);
 
-            logo.style.height = `${initHeight}px`;
+                dummy.remove();
+                logo.removeAttribute('style');
 
-            initX = logo.offsetLeft;
-            initY = logo.offsetTop;
+                logoClientRect = logo.contentDocument.getElementById("svg-main").getClientRects()[0];
+                initHeight = logoClientRect.height;
+                initWidth = logoClientRect.width;
 
-            logo.style.position = 'fixed';
-            dummy.style.height = `${initHeight}px`;
-            dummy.style.width = `${initWidth}px`;
+                logo.style.height = `${initHeight}px`;
 
-            catchcopy.style.visibility = logo.style.visibility = 'visible';
+                initX = logo.offsetLeft;
+                initY = logo.offsetTop;
 
-            dHeight = (initHeight - 25) / initY;
-            dX = (initX + 25) / initY;
-            isAnimating = true;
-        }, 200);
-    });
+                logo.style.position = 'fixed';
+                dummy.style.height = `${initHeight}px`;
+                dummy.style.width = `${initWidth}px`;
+
+                catchcopy.style.visibility = logo.style.visibility = 'visible';
+
+                dHeight = (initHeight - 25) / initY;
+                dX = (initX + 25) / initY;
+
+                logo.parentNode.insertBefore(dummy, logo.nextSibling);
+
+                requestID = window.requestAnimationFrame(setLogPlace);
+            }, 200);
+        });
 
 
-    const setLogPlace = () => {
-        if (isAnimating) {
-            const pageY = window.pageYOffset;
+        const setLogPlace = () => {
+            const pageY = window.scrollY;
             const y = logo.offsetTop;
-            logo.style.top = `${Math.max(initY - window.pageYOffset, 25)}px`;
+            logo.style.top = `${Math.max(initY - pageY, 25)}px`;
             logo.style.height = `${Math.max((initY - pageY) * dHeight + 25, 25)}px`;
             logo.style.left = `${Math.max((initY - pageY) * dX - 25, 25)}px`;
-        } else {
-            logo.removeAttribute('style');
+            requestID = window.requestAnimationFrame(setLogPlace);
         }
-        window.requestAnimationFrame(setLogPlace);
+        requestID = window.requestAnimationFrame(setLogPlace);
     }
-    window.requestAnimationFrame(setLogPlace);
-}
 
-logo.addEventListener('load', () => {
-    locateLogo();
+
+    logo.addEventListener('load', () => {
+        locateLogo();
+    });
 });
