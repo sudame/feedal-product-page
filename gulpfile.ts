@@ -1,6 +1,6 @@
 // declare function require(x: string): any;
 
-import { src, dest, task, watch } from 'gulp';
+import { src, dest, task, watch, parallel } from 'gulp';
 import * as sourcemaps from 'gulp-sourcemaps';
 import * as sass from "gulp-sass";
 import * as babel from 'gulp-babel';
@@ -42,5 +42,12 @@ task("default", () => {
     watch("src/**/*.scss", task("sass"));
     watch("src/**/assets/**", task("assets"));
 })
+
+task("build", parallel(
+    'html',
+    'ts',
+    'sass',
+    'assets',
+));
 
 
