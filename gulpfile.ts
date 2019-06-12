@@ -19,7 +19,6 @@ task("ts", (done) => {
     src("src/**/*.ts")
         .pipe(tsProject().on('error', () => { done() }))
         .pipe(babel())
-        .pipe(concat("index.js"))
         .pipe(dest("dist"));
     done();
 });
@@ -32,7 +31,7 @@ task("sass", (done) => {
 });
 
 task("assets", (done) => {
-    src("src/assets/*.*").pipe(dest("dist/assets/"));
+    src("src/**/assets/*.*").pipe(dest("dist"));
     done();
 });
 
