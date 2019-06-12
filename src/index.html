@@ -5,12 +5,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="index.js"></script>
+    <link rel="stylesheet" href="style.css">
     <title>Feedal</title>
 </head>
 
 <body>
-    今日はいい天気だなあ！
+    <div class="hero">
+        <h1 id="catchcopy">エンジニアのインプットに革命を</h1>
+        <object id="logo" data="./assets/logo_white.svg" type="image/svg+xml"></object>
+    </div>
+    <div class="header">
+    </div>
+    <main>
+        <section id="summary">
+            <h2>
+                あらゆるテクノロジーニュースをシェアし、<br>カテゴリごとにキャッチできるサービス
+            </h2>
+            <img id="mock-tabs" src="./assets/tabs.png" alt="モックアップ(タブ)">
+        </section>
+
+        <section class="row left" id="categories">
+            <div class="text">
+                <h2>カスタマイズ可能な幅広いカテゴリ</h2>
+                <p>あなたが知りたいカテゴリを狙い撃ち。</p>
+            </div>
+            <img src="./assets/large_tabs.png" alt="">
+        </section>
+
+        <section class="row right" id="share">
+            <img src="./assets/share.png" alt="">
+            <div class="text">
+                <h2>多種多様なコンテンツ共有</h2>
+                <p>良いコンテンツはスロー(共有)しよう。</p>
+                <p>URLさえあれば、インターネットの<span class="bold">すべて</span>を共有可能です。</p>
+            </div>
+        </section>
+
+        <section class="row left" id="timeline">
+            <div class="text">
+                <h2>トレンドを見逃さない</h2>
+                <p>コンテンツを共有した人のスコア・人数・速さを計算。</p>
+                <p><span class="bold">有益</span>で<spna class="bold">急上昇中</spna>なコンテンツが上位に表示されます。</p>
+            </div>
+            <img src="./assets/timeline.png" alt="">
+        </section>
+    </main>
+
+    <footer>
+        <p>さあ、あなたのインプットに革命を。</p>
+        <object id="footer-logo" data="./assets/logo_white.svg" type="image/svg+xml"></object>
+
+        <div class="downloads">
+            <div class="downloads__google-play">
+                <img src="./assets/google-play-badge.png" alt="">
+                <p>鋭意開発中</p>
+            </div>
+            <div class="downloads__itunes">
+                <img src="./assets/app-store.svg" alt="">
+                <p>鋭意開発中</p>
+            </div>
+        </div>
+
+    </footer>
+    <div class="copyright">
+        &copy; 2019 <span class="bold">Feedal</span> team.
+    </div>
+
+    <script src="index.js"></script>
+    <script>
+        (function (d) {
+            var config = {
+                kitId: 'uhf2jjw',
+                scriptTimeout: 3000,
+                async: true
+            },
+                h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+        })(document);
+    </script>
 </body>
 
 </html>

@@ -31,10 +31,16 @@ task("sass", (done) => {
     done();
 });
 
+task("assets", (done) => {
+    src("src/assets/*.*").pipe(dest("dist/assets/"));
+    done();
+});
+
 task("default", () => {
     watch("src/**/*.ts", task("ts"));
     watch("src/**/*.html", task("html"));
     watch("src/**/*.scss", task("sass"));
+    watch("src/**/assets/**", task("assets"));
 })
 
 
