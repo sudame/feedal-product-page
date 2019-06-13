@@ -160,9 +160,11 @@ main {
 }
 
 footer {
-  padding-top: 24px;
+  padding: 24px 0 48px;
   background-color: $primary;
   text-align: center;
+  color: white;
+
   p {
     margin: 12px auto;
     color: white;
@@ -175,27 +177,36 @@ footer {
     margin: auto;
   }
 
-  .downloads {
+  h3 {
+    margin: 0;
+    padding: 0 12px;
+    background-color: $primary;
+    transform: translateY(-60%);
+    font-weight: 200;
+    position: absolute;
+    top: 0;
+  }
+
+  .shares {
+    position: relative;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
+    margin: auto;
+    width: 350px;
+    max-width: 70%;
+    border: 1px solid white;
+    margin-top: 48px;
+    padding: 28px 12px 20px;
+  }
 
-    & > div {
-      margin: auto 24px;
-
-      @media (max-width: 500px) {
-        margin: auto 6px;
-      }
-
-      img {
-        height: 50px;
-      }
-    }
+  a {
+    color: white;
   }
 }
 
 .copyright {
-  background-color: $primary;
+  background-color: #333;
   text-align: center;
   color: white;
   font-weight: 200;
@@ -235,6 +246,45 @@ img {
   }
 }
 
+.download {
+  background-color: #333;
+  padding: 24px 0;
+
+  .release-schedule {
+    color: white;
+    margin: 0 auto 12px;
+
+    p {
+      border: none;
+      font-weight: 400;
+    }
+  }
+
+  .stores {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+
+    p {
+      margin: 12px auto 0;
+    }
+
+    & > div {
+      margin: auto 6px;
+      color: #aaa;
+
+      @media (max-width: 500px) {
+        margin: auto 6px;
+      }
+
+      img {
+        height: 50px;
+      }
+    }
+  }
+}
+
 .release-schedule {
   color: $primary;
   text-align: center;
@@ -246,17 +296,5 @@ img {
     margin: auto auto;
     padding: 6px 24px;
     border: 1px dashed $primary;
-  }
-
-  &.footer {
-    color: white;
-    margin: 48px auto 12px;
-    border-top: 1px dashed white;
-    padding-top: 24px;
-
-    p {
-      border: none;
-      font-weight: 400;
-    }
   }
 }
