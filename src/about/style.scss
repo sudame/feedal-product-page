@@ -18,8 +18,12 @@ body {
   justify-content: flex-end;
   align-items: center;
   color: white;
-  font-weight: 400;
-  letter-spacing: 0.025em;
+  padding: 24px;
+  box-sizing: border-box;
+
+  .header-item {
+    margin: 3px;
+  }
 }
 
 .hero {
@@ -32,7 +36,7 @@ body {
   color: white;
 
   @media (max-width: 500px) {
-    height: 30vh;
+    height: 40vh;
     margin-bottom: -60px;
   }
 
@@ -82,6 +86,7 @@ main {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    padding: 24px;
 
     .text {
       text-align: center;
@@ -109,8 +114,6 @@ main {
     }
 
     @media (max-width: 500px) {
-      padding: 24px;
-
       h2 {
         padding: 0;
       }
@@ -178,6 +181,11 @@ footer {
 
     & > div {
       margin: auto 24px;
+
+      @media (max-width: 500px) {
+        margin: auto 6px;
+      }
+
       img {
         height: 50px;
       }
@@ -200,4 +208,26 @@ footer {
 
 img {
   display: block;
+}
+
+.share-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 25px;
+  text-align: center;
+  line-height: 25px;
+  text-decoration: none;
+  border-radius: 5px;
+  border: 1px solid white;
+  color: white;
+}
+
+#follow {
+  font-weight: 200;
+
+  @media (max-width: 400px) {
+    display: none;
+  }
 }
