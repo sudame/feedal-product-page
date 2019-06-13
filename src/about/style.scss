@@ -4,7 +4,8 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: kozuka-gothic-pro, sans-serif;
+  font-family: source-han-sans-japanese, sans-serif;
+  font-style: normal;
 }
 
 .header {
@@ -43,7 +44,7 @@ body {
   h1 {
     padding-bottom: 1em;
     margin: 0;
-    font-weight: 200;
+    font-weight: 100;
     visibility: hidden;
 
     @media (max-width: 500px) {
@@ -67,16 +68,37 @@ body {
   }
 }
 
+.description {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 48px;
+}
+
 main {
   min-height: 100vh;
 
-  h2 {
-    margin: 0;
-    padding: 24px 24px 12px;
-    text-align: center;
+  #summary {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 48px;
+    max-width: 800px;
+    margin: auto;
 
-    @media (max-width: 500px) {
-      text-align: left;
+    h2 {
+      margin: 24px;
+      font-size: 40px;
+
+      @media (max-width: 500px) {
+        text-align: left;
+      }
+    }
+
+    img {
+      margin: 24px;
+      max-height: 50vh;
+      width: auto;
     }
   }
 
@@ -91,7 +113,7 @@ main {
     .text {
       text-align: center;
       .bold {
-        font-weight: 900;
+        font-weight: 700;
         padding: 0 0.25em;
       }
     }
@@ -140,12 +162,6 @@ main {
     }
   }
 
-  #mock-tabs {
-    width: 500px;
-    max-width: 75%;
-    margin: auto;
-  }
-
   #categories {
     background-color: #fcece5;
   }
@@ -168,7 +184,7 @@ footer {
   p {
     margin: 12px auto;
     color: white;
-    font-weight: 200;
+    font-weight: 100;
   }
 
   #footer-logo {
@@ -182,7 +198,7 @@ footer {
     padding: 0 12px;
     background-color: $primary;
     transform: translateY(-60%);
-    font-weight: 200;
+    font-weight: 100;
     position: absolute;
     top: 0;
   }
@@ -209,7 +225,7 @@ footer {
   background-color: #333;
   text-align: center;
   color: white;
-  font-weight: 200;
+  font-weight: 100;
   padding-bottom: 24px;
   font-size: 0.75em;
 
@@ -239,7 +255,7 @@ img {
 }
 
 #follow {
-  font-weight: 200;
+  font-weight: 100;
 
   @media (max-width: 400px) {
     display: none;
