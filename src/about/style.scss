@@ -86,12 +86,23 @@ main {
     max-width: 800px;
     margin: auto;
 
+    @media (max-width: 500px) {
+      padding: 10vw;
+    }
+
     h2 {
       margin: 24px;
       font-size: 40px;
 
+      & > div {
+        white-space: nowrap;
+      }
+
       @media (max-width: 500px) {
         text-align: left;
+        font-size: 6vw;
+        width: 50%;
+        margin: 0;
       }
     }
 
@@ -99,7 +110,12 @@ main {
       margin: 24px;
       max-height: 50vh;
       width: auto;
+
+      @media (max-width: 500px) {
+        margin: 12px;
+        width: 50%;
     }
+  }
   }
 
   section.row {
