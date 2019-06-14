@@ -261,6 +261,18 @@ footer {
   padding-bottom: 24px;
   font-size: 0.75em;
 
+  .google-analytics {
+    margin-top: 1rem;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    color: white;
+  }
+
   .bold {
     @include font-default();
   }
