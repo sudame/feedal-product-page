@@ -9,7 +9,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const locateLogo = () => {
 
-        let logoClientRect = logo.contentDocument.getElementById("svg-main").getClientRects()[0];
+        let logoClientRect = logo.contentDocument.getElementById("svg-main").getBoundingClientRect();
         let initHeight = logoClientRect.height;
         let initWidth = logoClientRect.width;
 
@@ -40,7 +40,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 dummy.remove();
                 logo.removeAttribute('style');
 
-                logoClientRect = logo.contentDocument.getElementById("svg-main").getClientRects()[0];
+                logoClientRect = logo.contentDocument.getElementById("svg-main").getBoundingClientRect();
                 initHeight = logoClientRect.height;
                 initWidth = logoClientRect.width;
 
