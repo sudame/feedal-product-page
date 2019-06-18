@@ -358,3 +358,13 @@ img {
     border: 1px dashed $primary;
   }
 }
+
+.icon {
+  height: 1em;
+  width: 1em;
+
+  &.icon-2x {
+    height: 2em;
+    width: 2em;
+  }
+}
