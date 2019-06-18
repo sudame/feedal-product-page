@@ -7,6 +7,7 @@ import * as babel from 'gulp-babel';
 import * as ts from 'gulp-typescript';
 import * as uglify from 'gulp-uglify';
 import * as htmlmin from 'gulp-htmlmin';
+import * as webp from 'gulp-webp';
 
 const tsProject = ts.createProject({});
 
@@ -35,6 +36,12 @@ task("sass", (done) => {
 
 task("assets", (done) => {
     src("src/**/assets/**").pipe(dest("dist"));
+
+    src("src/**/assets/*.png")
+        .pipe(webp())
+        .pipe(dest("dist"));
+
+
     done();
 });
 
