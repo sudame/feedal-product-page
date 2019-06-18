@@ -122,7 +122,7 @@ main {
       }
     }
 
-    .img {
+    .img > img {
       margin: 24px;
       max-height: 50vh;
       width: auto;
@@ -162,7 +162,7 @@ main {
       }
     }
 
-    .img {
+    .img > img {
       width: 500px;
       max-width: 70vw;
       height: auto;
@@ -278,7 +278,7 @@ footer {
   }
 }
 
-.img {
+.img > img {
   display: block;
   width: auto;
   height: auto;
@@ -338,7 +338,8 @@ footer {
         margin: auto 6px;
       }
 
-      .img {
+      .img > img,
+      img {
         height: 50px;
       }
     }
