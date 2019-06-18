@@ -31,7 +31,7 @@ task("sass", (done) => {
 });
 
 task("assets", (done) => {
-    src("src/**/assets/*.*").pipe(dest("dist"));
+    src("src/**/assets/**").pipe(dest("dist"));
     done();
 });
 
