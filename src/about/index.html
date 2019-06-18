@@ -7,11 +7,13 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:100,400,700&display=swap&subset=japanese" as="style">
+    <link rel="preload" href="./index.js" as="script">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="preload" as="style" href="style.css" onload="this.rel='stylesheet'">
     <title>Feedal - エンジニアのインプットに革命を</title>
-    <script defer src="index.js"></script>
     <meta property="og:title" content="Feedal - エンジニアのインプットに革命を" />
     <meta property="og:site_name" content="Feedal - エンジニアのインプットに革命を" />
     <meta property="og:type" content="website" />
@@ -22,8 +24,6 @@
     <meta name="twitter:site" content="@feedal_inc" />
     <meta name="twitter:player" content="@feedal_inc" />
     <meta property="fb:app_id" content="2286656724750375" />
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:100,400,700&display=swap&subset=japanese"
-        rel="preload" as="style" onload="this.rel='stylesheet'">
 
     <link rel="apple-touch-icon" sizes="57x57" href="./assets/favicons/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="./assets/favicons/apple-icon-60x60.png">
@@ -52,6 +52,11 @@
 
         gtag('config', 'UA-142159794-1');
     </script>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:100,400,700&display=swap&subset=japanese">
+    <script src="index.js" defer></script>
 </head>
 
 <body>
