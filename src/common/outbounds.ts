@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
       target.indexOf("http") === 0 &&
       target.indexOf("https://feedal.com") < 0
     ) {
-      console.log(links[i], target);
       link.addEventListener("click", () => {
         gtag("event", "click", {
           event_category: "outbound",
