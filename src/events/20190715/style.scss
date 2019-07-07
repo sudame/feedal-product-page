@@ -80,7 +80,7 @@ body {
     }
 
     @media (max-aspect-ratio: 1/1) {
-      font-size: 9vw;
+      font-size: 7vw;
     }
   }
 
@@ -90,6 +90,10 @@ body {
     @media (max-aspect-ratio: 1/1) {
       font-size: 5vw;
     }
+  }
+
+  p {
+    padding: 0 12px;
   }
 
   p.date {
