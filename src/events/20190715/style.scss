@@ -168,7 +168,33 @@ main {
 
   section.date {
     .date__day {
-      font-size: 32px;
+      font-size: 24px;
+    }
+  }
+
+  section.place {
+    h4 {
+      margin-bottom: 0.5em;
+    }
+
+    ul {
+      margin: 0;
+    }
+
+    .place__address {
+      font-size: 24px;
+    }
+
+    .place__map {
+      height: 350px;
+      max-width: 720px;
+      display: block;
+      margin: 2em auto;
+      border: 1px solid $black;
+
+      @media (max-aspect-ratio: 1/1) {
+        height: 40vh;
+      }
     }
   }
 }
