@@ -19,7 +19,6 @@
     "gulp-sourcemaps": "^2.6.5",
     "gulp-typescript": "^5.0.1",
     "gulp-uglify": "^3.0.2",
-    "gulp-util": "^3.0.8",
     "gulp-webp": "^4.0.1",
     "lazysizes": "^5.1.0",
     "node-sass": "^4.12.0",
