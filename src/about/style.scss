@@ -104,12 +104,12 @@ main {
     margin: auto;
 
     @media (max-width: 500px) {
-      padding: 10vw;
+      padding: 5vw;
     }
 
     h2 {
-      margin: 24px;
-      font-size: 40px;
+      margin: 12px;
+      font-size: 60px;
 
       & > div {
         white-space: nowrap;
@@ -117,8 +117,7 @@ main {
 
       @media (max-width: 500px) {
         text-align: left;
-        font-size: 6vw;
-        width: 50%;
+        font-size: 8vw;
         margin: 0;
       }
     }
