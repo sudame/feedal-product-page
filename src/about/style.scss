@@ -347,11 +347,12 @@ footer {
     text-align: center;
 
     p {
-      margin: 12px auto 0;
+      margin: 6px auto 0;
     }
 
     & > div {
-      margin: auto 6px;
+      margin-right: 6px;
+      margin-left: 6px;
       color: #aaa;
 
       @media (max-width: 500px) {
